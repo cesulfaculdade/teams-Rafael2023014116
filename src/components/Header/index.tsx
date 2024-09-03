@@ -2,14 +2,22 @@ import { Image, Text, TouchableOpacity } from "react-native";
 import { BackButton, BackIcon, Container, Logo } from "./styles";
 import logoimg from "../../assets/logo.png";
 
+type Props = {
+    showBackButton?: boolean;
+}
 
-export function Header() {
+
+export function Header({showBackButton = false}: Props) {
     return(
         <Container>
+          {
+            showBackButton &&
             <BackButton>
-                <BackIcon name="arrow-back-ios" color="#FFF"/>
+                <BackIcon name="arrow-back-ios" />
             </BackButton>
-            <Logo source={logoimg}/>
+          }
+
+          <Logo source={logoimg}/>
         </Container>
     )
 }
