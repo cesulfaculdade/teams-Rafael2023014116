@@ -18,4 +18,5 @@ import styled from 'styled-components/native';
   width: 100%;
   height: 173px;
   padding-top: 54px;
+  padding-bottom: 24px;
   `
