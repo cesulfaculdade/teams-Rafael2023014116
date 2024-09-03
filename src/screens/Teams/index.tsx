@@ -1,14 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import Logo from "../../assets/logo.png";
-import { Container, Title } from './styles';
+import { Container, Title, HeaderContainer} from './styles';
 
 export function Teams() {
     return (
       <Container>
-        <Image source={Logo}/>
-        <Title>Equipes</Title>
-        <StatusBar style="auto" />
+        {/*<Title>Equipes</Title> */}
+        <HeaderContainer>
+          <Image source={Logo}/>
+        </HeaderContainer>
       </Container>
     );
 }

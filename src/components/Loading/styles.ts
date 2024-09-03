@@ -7,4 +7,7 @@ align-items: center;
 background-color: ${({theme}) => theme.COLORS.GRAY_500};
 `;
 
-export const LoadIndicator = styled.ActivityIndicator``; 
+export const LoadIndicator = styled.ActivityIndicator.attrs(({theme}) => ({
+    color: theme.COLORS.GRAY_700,
+    size: 'large'
+}))``; 
