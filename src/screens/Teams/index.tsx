@@ -6,9 +6,10 @@ import { Header } from '@components/Header';
 import { Highlight } from '@components/Highlight';
 import { TeamCard } from '@components/TeamCard';
 import { useState } from 'react';
+import { ListEmpty } from '@components/ListEmpty';
 
 export function Teams() {
-  const [teams, setTeams] = useState<string[]>(['Equipe 1', 'Equipe 2', 'Equipe 1', 'Equipe 2','Equipe 1', 'Equipe 2','Equipe 1', 'Equipe 2','Equipe 1', 'Equipe 2']);
+  const [teams, setTeams] = useState<string[]>([]);
 
     return (
       <Container>
@@ -28,6 +29,10 @@ export function Teams() {
               <TeamCard title= {item}/>
 
             )}
+            ListEmptyComponent={() => (
+              <ListEmpty message="Comece criando uma equipe!"/>
+            )}
+            contentContainerStyle={{flex: 1}}
             />
 
         </Content>
