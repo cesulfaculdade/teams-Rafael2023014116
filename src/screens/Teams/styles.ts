@@ -19,4 +19,8 @@ import styled from 'styled-components/native';
   height: 173px;
   padding-top: 54px;
   padding-bottom: 24px;
-  `
+  `;
+
+  export const Content = styled.View`
+  flex: 1;
+  padding: 24px;`;
