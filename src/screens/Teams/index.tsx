@@ -7,6 +7,7 @@ import { Highlight } from '@components/Highlight';
 import { TeamCard } from '@components/TeamCard';
 import { useState } from 'react';
 import { ListEmpty } from '@components/ListEmpty';
+import { Button } from '@components/Button';
 
 export function Teams() {
   const [teams, setTeams] = useState<string[]>([]);
@@ -35,6 +36,7 @@ export function Teams() {
             contentContainerStyle={{flex: 1}}
             />
 
+            <Button title="Criar uma nova equipe" />
         </Content>
       </Container>
     );
