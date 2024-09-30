@@ -1,5 +1,6 @@
 import { Loading } from '@components/Loading';
 import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
+import { NewTeam } from '@screens/NewTeam';
 import { Teams } from '@screens/Teams';
 import theme from '@theme/index';
 import { StatusBar } from 'react-native';
@@ -14,7 +15,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? < Teams/> : <Loading/>}
+      {fontsLoaded ? < NewTeam/> : <Loading/>}
    </ThemeProvider>
   );
 }

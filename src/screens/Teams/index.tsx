@@ -15,7 +15,7 @@ export function Teams() {
     return (
       <Container>
         <HeaderContainer>
-          <Header/>
+          <Header showBackButton/>
 
           <Highlight
             title="Equipes"
