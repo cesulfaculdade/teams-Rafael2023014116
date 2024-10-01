@@ -6,6 +6,7 @@ import { Teams } from "@screens/Teams";
 import { TeamCard } from "@components/TeamCard";
 import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
+import { Input } from "@components/Input";
 
 export function NewTeam(){
     return(<Container>
@@ -18,9 +19,7 @@ export function NewTeam(){
           />
         </HeaderContainer>
         <Content>
-            <TextInput 
-            placeholder="Rafaelll"
-            placeholderTextColor="#000"
+            <Input 
             />
             <Button title="Criar equipe" />
         </Content>
