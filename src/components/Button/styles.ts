@@ -8,7 +8,7 @@ type Props = {
 }
 export const Container = styled(TouchableOpacity)<Props>`
 flex: 1;
-background-color: ${({theme, type}) => theme.COLORS.GREEN_500};
+background-color: ${({theme, type}) => type === "PRIMARY" ? theme.COLORS.GREEN_500 : theme.COLORS.RED};
 min-height: 55px;
 max-height: 55px;
 border-radius: 8px;

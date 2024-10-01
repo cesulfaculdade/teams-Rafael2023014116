@@ -19,7 +19,7 @@ export function NewTeam(){
           />
         </HeaderContainer>
         <Content>
-            <Input 
+            <Input placeholder="Nome da equipe"
             />
             <Button title="Criar equipe" />
         </Content>
