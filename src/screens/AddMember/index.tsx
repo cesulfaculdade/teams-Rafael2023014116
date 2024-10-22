@@ -1,12 +1,17 @@
 import { Header } from "@components/Header";
-import { Container, Content, HeaderContainer, InputContainer } from "./styles";
+import { Container, Content, HeaderContainer, InputContainer, Tabs } from "./styles";
 import { Highlight } from "@components/Highlight";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 import { ButtonIcon } from "@components/ButtonIcon";
+import { Tab } from "@components/Tab";
+import { FlatList } from "react-native";
+import { useState } from "react";
 
 
 export function AddMember() {
+  const [tab, setTab] = useState("Titular");
+
     return (
         <Container>
         <HeaderContainer>
@@ -30,6 +35,22 @@ export function AddMember() {
             style={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0}}
             icon="add-circle-outline"/>
           </InputContainer>
+
+          <Tabs>
+            <FlatList
+              data={['Titular', 'Reserva']}
+              keyExtractor={(item) => item}
+              renderItem={({item}) => (
+                <Tab
+                 title={item}
+                 isActive={item == tab}
+                 onPress={() => setTab(item)}
+                />
+              )}
+              horizontal
+
+            />
+          </Tabs>
 
             <Button title="Deletar Equipe" type="SECONDARY" />
         </Content>
