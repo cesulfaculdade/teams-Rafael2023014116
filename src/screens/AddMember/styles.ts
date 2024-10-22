@@ -15,7 +15,6 @@ export const Container = styled.View`
   export const Content = styled.View`
   flex: 1;
   padding: 24px;
-  justify-content: space-between;
 
   `;
 
@@ -23,4 +22,8 @@ export const Container = styled.View`
   flex-direction: row;
   `;
 
-  export const Tabs = styled.View``;
+  export const Tabs = styled.View`
+  margin: 32px 0;
+  flex-direction: row;
+  align-items: center;
+  `;

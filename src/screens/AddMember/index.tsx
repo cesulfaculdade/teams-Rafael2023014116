@@ -7,6 +7,7 @@ import { ButtonIcon } from "@components/ButtonIcon";
 import { Tab } from "@components/Tab";
 import { FlatList } from "react-native";
 import { useState } from "react";
+import { Tag } from "@components/Tag";
 
 
 export function AddMember() {
@@ -50,6 +51,7 @@ export function AddMember() {
               horizontal
 
             />
+            <Tag text = {0}/>
           </Tabs>
 
             <Button title="Deletar Equipe" type="SECONDARY" />
