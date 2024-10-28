@@ -2,10 +2,11 @@ import { ButtonIcon } from "@components/ButtonIcon";
 import { Container, Name } from "./styles";
 
 type Props = {
-    name: string
+    name: string,
+    onRemove: () => void;
 }
 
-export function MemberCard({name}: Props) {
+export function MemberCard({name, onRemove}: Props) {
     return(
         <Container>
             <Name>
@@ -16,7 +17,9 @@ export function MemberCard({name}: Props) {
             icon="delete-outline"
             type="SECONDARY"
             size="SM"
-            borderRadius="RIGHT"/>
+            borderRadius="RIGHT"
+            onPress={onRemove}
+        />
                 
         </Container>
         

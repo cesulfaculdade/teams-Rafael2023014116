@@ -55,10 +55,11 @@ export function AddMember() {
             <Tag text = {0}/>
           </Tabs>
 
-          <MemberCard name="Rafael Ribeirinho"/>
-          <MemberCard name="Rafael Ribeirinho"/>
-          <MemberCard name="Rafael Ribeirinho"/>
-          <MemberCard name="Rafael Ribeirinho"/>
+          <MemberCard 
+          name="Rafael Ribeirinho"
+          onRemove={() => console.log('remove')}
+          />
+         
 
             <Button title="Deletar Equipe" type="SECONDARY" />
         </Content>
