@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { AddMember } from "@screens/AddMember"
 import { NewTeam } from "@screens/NewTeam"
 import { Teams } from "@screens/Teams"
 
@@ -19,8 +20,12 @@ export function AppRoutes() {
 
         <Screen 
          name="newTeam"
-         component={NewTeam}
-        
+         component={NewTeam}     
+        />
+
+        <Screen 
+         name="addMember"
+         component={AddMember}     
         />
        
       </Navigator>

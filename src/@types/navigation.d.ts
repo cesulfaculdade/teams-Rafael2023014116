@@ -3,7 +3,7 @@ export declare global {
         interface RootParamList{
             teams: undefined;
             newTeam: undefined;
-            addMembers: {
+            addMember: {
                 team: string;
             }
         }

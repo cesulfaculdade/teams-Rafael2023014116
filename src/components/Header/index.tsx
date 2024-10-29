@@ -14,7 +14,6 @@ const navigation = useNavigation();
 
   function handleGoBack() {
     navigation.goBack();
-
   }
     return(
         <Container>

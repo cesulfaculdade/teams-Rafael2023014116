@@ -10,11 +10,17 @@ import { useState } from "react";
 import { Tag } from "@components/Tag";
 import { MemberCard } from "@components/MemberCard";
 import { ListEmpty } from "@components/ListEmpty";
+import { useRoute } from "@react-navigation/native";
 
-
+type RouteParams = {
+  team: string;
+}
 export function AddMember() {
   const [tab, setTab] = useState("Titular");
   const [members, setMembers] = useState<string[]>(["Rafael", "Danilão", "JotaElle"]);
+
+  const route = useRoute();
+  const {team} = route.params as RouteParams; 
 
     return (
         <Container>

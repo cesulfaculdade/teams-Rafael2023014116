@@ -7,8 +7,17 @@ import { TeamCard } from "@components/TeamCard";
 import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
 import { Input } from "@components/Input";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
 export function NewTeam(){
+  const [team, setTeam] = useState<string>("")
+  const navigation = useNavigation();
+
+  function handleAddMembers() {
+    navigation.navigate('addMember', {team: team})
+  }
+
     return(<Container>
         <HeaderContainer>
           <Header showBackButton/>
@@ -20,8 +29,11 @@ export function NewTeam(){
         </HeaderContainer>
         <Content>
             <Input placeholder="Nome da equipe"
+            onChangeText={setTeam}
             />
-            <Button title="Criar equipe" />
+            <Button title="Criar equipe" 
+             onPress={handleAddMembers}
+            />
         </Content>
       </Container>
 
