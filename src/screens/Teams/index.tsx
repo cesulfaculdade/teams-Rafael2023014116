@@ -8,9 +8,16 @@ import { TeamCard } from '@components/TeamCard';
 import { useState } from 'react';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 export function Teams() {
   const [teams, setTeams] = useState<string[]>([]);
+
+  const navigation = useNavigation();
+
+  function handleNewTeam() {
+    navigation.navigate("newTeam");
+  }
 
     return (
       <Container>
@@ -33,10 +40,13 @@ export function Teams() {
             ListEmptyComponent={() => (
               <ListEmpty message="Comece criando uma equipe!"/>
             )}
-            contentContainerStyle={{flex: 1}}
+            contentContainerStyle={teams.length == 0 && {flex: 1}}
             />
 
-            <Button title="Criar uma nova equipe" />
+            <Button 
+            title="Criar uma nova equipe" 
+            onPress={() => navigation.navigate('newTeam')}
+            />
         </Content>
       </Container>
     );
