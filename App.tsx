@@ -1,5 +1,6 @@
 import { Loading } from '@components/Loading';
 import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
+import { Routes } from '@routes/index';
 import { AddMember } from '@screens/AddMember';
 import { NewTeam } from '@screens/NewTeam';
 import { Teams } from '@screens/Teams';
@@ -16,7 +17,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? < AddMember/> : <Loading/>}
+      {fontsLoaded ? < Routes/> : <Loading/>}
    </ThemeProvider>
   );
 }
