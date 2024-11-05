@@ -9,18 +9,23 @@ import { Button } from "@components/Button";
 import { Input } from "@components/Input";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { createTeam } from "src/storage/team/createTeam";
 
 export function NewTeam(){
   const [team, setTeam] = useState<string>("")
   const navigation = useNavigation();
 
-  function handleAddMembers() {
-    navigation.navigate('addMember', {team: team})
+  const insets = useSafeAreaInsets();
+
+  async function handleAddMembers() {
+    await createTeam(team);
+    navigation.navigate('addMember', {team})
   }
 
-    return(<Container>
-        <HeaderContainer>
-          <Header showBackButton/>
+    return(<Container style={{paddingBottom: insets.bottom}}>
+        <HeaderContainer style={{paddingTop: insets.top}}>
+          <Header showBackButton />
 
           <Highlight
             title="Nova Equipe"

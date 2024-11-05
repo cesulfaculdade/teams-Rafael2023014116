@@ -20,10 +20,12 @@ export function AddMember() {
   const [tab, setTab] = useState("Titular");
   const [members, setMembers] = useState<string[]>(["Rafael", "Danilão", "JotaElle"]);
 
+  const insets = useSafeAreaInsets();
+
   const route = useRoute();
   const {team} = route.params as RouteParams; 
 
-  const insets = useSafeAreaInsets();
+  
 
     return (
         <Container style={{paddingBottom: insets.bottom}}>
