@@ -10,7 +10,8 @@ import { Input } from "@components/Input";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { createTeam } from "src/storage/team/createTeam";
+import { createTeam } from "@storage/team/createTeam";
+
 
 export function NewTeam(){
   const [team, setTeam] = useState<string>("")
