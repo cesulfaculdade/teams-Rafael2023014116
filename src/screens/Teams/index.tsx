@@ -5,10 +5,10 @@ import { Container, HeaderContainer, Content} from './styles';
 import { Header } from '@components/Header';
 import { Highlight } from '@components/Highlight';
 import { TeamCard } from '@components/TeamCard';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { fetchAllTeams } from 'src/storage/team/fetchAllTeams';
 
@@ -27,6 +27,7 @@ export function Teams() {
     try {
       
       const data = await fetchAllTeams();
+      setTeams(data)
 
     } catch (error) {  
       throw console.log(error);
@@ -34,10 +35,9 @@ export function Teams() {
     
   }
 
-  useEffect(() => {
-     handleFecthAllTeams();
-
-  }, []);
+  useFocusEffect(useCallback(() => {
+     handleFecthAllTeams(); 
+  }, [teams]));
 
     return (
       <Container style={{paddingBottom: insets.bottom}}>
