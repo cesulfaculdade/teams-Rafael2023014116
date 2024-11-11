@@ -18,10 +18,13 @@ export function NewTeam(){
   const [team, setTeam] = useState<string>("")
   const navigation = useNavigation();
 
-  const insets = useSafeAreaInsets();
+  const insets = useSafeAreaInsets();   
 
-  async function handleAddMembers() {
+  async function handleAddTeam() {
     try {
+      if (team.trim().length == 0) {
+        return Alert.alert('Nova equipe', 'Informe o nome da equipe');
+      }
       await createTeam(team);
       navigation.navigate('addMember', {team})
     } catch (error) {
@@ -48,7 +51,7 @@ export function NewTeam(){
             onChangeText={setTeam}
             />
             <Button title="Criar equipe" 
-             onPress={handleAddMembers}
+             onPress={handleAddTeam}
             />
         </Content>
       </Container>

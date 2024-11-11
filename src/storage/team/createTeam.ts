@@ -10,7 +10,7 @@ export async function createTeam(newTeam: string) {
     
         const storedTeams = await fetchAllTeams();
 
-        const teamsAlreadyExists = storedTeams.incluedes(newTeam);
+        const teamsAlreadyExists = storedTeams.includes(newTeam);
         if (teamsAlreadyExists) {
             throw new AppError('Já existe uma equipe com esse nome!');
         }
