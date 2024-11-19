@@ -11,6 +11,7 @@ import { Button } from '@components/Button';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { fetchAllTeams } from 'src/storage/team/fetchAllTeams';
+import { api } from 'src/services/api';
 
 export function Teams() {
   const [teams, setTeams] = useState<string[]>([]);
@@ -26,9 +27,9 @@ export function Teams() {
   async function handleFecthAllTeams() {
     try {
       
-      const data = await fetchAllTeams();
-      setTeams(data)
-
+      //const data = await fetchAllTeams();
+      const response = await api.get('/teams');
+      setTeams(response.data.teams)
     } catch (error) {  
       throw console.log(error);
     }

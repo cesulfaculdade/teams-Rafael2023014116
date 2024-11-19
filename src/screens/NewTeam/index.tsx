@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { createTeam } from "@storage/team/createTeam";
 import { AppError } from "@utils/AppError";
+import { api } from "src/services/api";
 
 
 export function NewTeam(){
@@ -25,7 +26,8 @@ export function NewTeam(){
       if (team.trim().length == 0) {
         return Alert.alert('Nova equipe', 'Informe o nome da equipe');
       }
-      await createTeam(team);
+      //await createTeam(team);
+      await api.post('./teams, {name: team')
       navigation.navigate('addMember', {team})
     } catch (error) {
       if (error instanceof AppError) {
